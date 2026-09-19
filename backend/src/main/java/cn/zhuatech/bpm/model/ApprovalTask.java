@@ -5,6 +5,9 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Entity
 @Table(name="bpm_approval_task")
 public class ApprovalTask extends BaseEntity {
@@ -17,7 +20,37 @@ public class ApprovalTask extends BaseEntity {
     @Column(nullable=false) private LocalDate expenseDate;
     @Column(nullable=false,length=20) private String status;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     protected ApprovalTask() {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ApprovalTask(String no,String claimant,String department,String category,String purpose,BigDecimal amount,LocalDate date,String status){this.claimNo=no;this.claimant=claimant;this.department=department;this.category=category;this.purpose=purpose;this.amount=amount;this.expenseDate=date;this.status=status;}
-    public String getClaimNo(){return claimNo;} public String getClaimant(){return claimant;} public String getDepartment(){return department;} public String getCategory(){return category;} public String getPurpose(){return purpose;} public BigDecimal getAmount(){return amount;} public LocalDate getExpenseDate(){return expenseDate;} public String getStatus(){return status;}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
+    public String getClaimNo(){return claimNo;} /**
+                                                 * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                 */
+public String getClaimant(){return claimant;} /**
+                                                                                               * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                               */
+public String getDepartment(){return department;} /**
+                                                                                                                                                 * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                 */
+public String getCategory(){return category;} /**
+                                                                                                                                                                                               * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                               */
+public String getPurpose(){return purpose;} /**
+                                                                                                                                                                                                                                           * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                           */
+public BigDecimal getAmount(){return amount;} /**
+                                                                                                                                                                                                                                                                                         * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                                         */
+public LocalDate getExpenseDate(){return expenseDate;} /**
+                                                                                                                                                                                                                                                                                                                                                * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+                                                                                                                                                                                                                                                                                                                                                */
+public String getStatus(){return status;}
 }

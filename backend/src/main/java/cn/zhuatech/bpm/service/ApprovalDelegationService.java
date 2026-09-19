@@ -8,10 +8,16 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ApprovalDelegationService {
     private static final int DAILY_CAPACITY_PER_APPROVER = 12;
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(
         @Min(0) int pendingTasks,
         @Min(0) int oldestTaskHours,
@@ -22,9 +28,15 @@ public class ApprovalDelegationService {
         @Min(0) int highValueTasks
     ) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String status, int primaryAssignments, int delegatedAssignments,
                          int escalatedAssignments, int estimatedClearanceHours, List<String> actions) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result route(Request request) {
         int primaryCapacity = request.primaryApproversAvailable() * DAILY_CAPACITY_PER_APPROVER;
         int delegateCapacity = request.delegateApproversAvailable() * DAILY_CAPACITY_PER_APPROVER;

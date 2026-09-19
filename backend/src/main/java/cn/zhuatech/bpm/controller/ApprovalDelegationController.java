@@ -6,12 +6,21 @@ import cn.zhuatech.bpm.service.ApprovalDelegationService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @RestController
 @RequestMapping("/api/bpm/insights")
 public class ApprovalDelegationController {
     private final ApprovalDelegationService service;
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public ApprovalDelegationController(ApprovalDelegationService service) { this.service = service; }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @PostMapping("/approval-delegation")
     public ApiResponse<ApprovalDelegationService.Result> route(
         @Valid @RequestBody ApprovalDelegationService.Request request) {

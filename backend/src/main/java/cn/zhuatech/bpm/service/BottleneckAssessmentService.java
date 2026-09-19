@@ -11,8 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class BottleneckAssessmentService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result assess(Request request) {
         double waitingRatio = request.activeInstances() == 0 ? 0 : (double) request.waitingTasks() / request.activeInstances();
         int score = Math.min(100, (int) Math.round(request.averageTaskHours() / request.slaHours() * 40
@@ -27,10 +33,16 @@ public class BottleneckAssessmentService {
             Math.max(0, request.averageTaskHours() - request.slaHours()), actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String processName, @Min(0) double averageTaskHours,
                           @Positive double slaHours, @Min(0) int activeInstances,
                           @Min(0) int waitingTasks,
                           @DecimalMin("0") @DecimalMax("1") double reworkRate) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String processName, int bottleneckScore, String level,
                          double predictedDelayHours, List<String> actions) {}
 }

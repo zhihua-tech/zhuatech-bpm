@@ -7,9 +7,15 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class ProcessSlaSimulationServiceTests {
     private final ProcessSlaSimulationService service = new ProcessSlaSimulationService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void recommendsMoreParallelWorkersForSlaMiss() {
         var result = service.simulate(new ProcessSlaSimulationService.Request(
@@ -21,6 +27,9 @@ class ProcessSlaSimulationServiceTests {
         assertTrue(result.actions().getFirst().contains("4"));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test
     void keepsHealthyProcessOnTrack() {
         var result = service.simulate(new ProcessSlaSimulationService.Request(

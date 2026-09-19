@@ -10,8 +10,14 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class ProcessSlaSimulationService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result simulate(Request request) {
         double workloadMinutes = request.remainingSteps() * request.averageStepMinutes()
             * (1 + request.reworkRate());
@@ -32,11 +38,17 @@ public class ProcessSlaSimulationService {
             requiredParallelWorkers, decision, actions);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String processKey, @Min(0) int completedSteps,
                           @Min(1) int remainingSteps, @Min(1) int averageStepMinutes,
                           @Min(1) int parallelWorkers, @Min(1) int slaRemainingMinutes,
                           @DecimalMin("0") @DecimalMax("1") double reworkRate) {}
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String processKey, int projectedMinutes, int bufferMinutes,
                          int requiredParallelWorkers, String decision, List<String> actions) {}
 }

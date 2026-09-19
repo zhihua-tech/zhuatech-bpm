@@ -3,8 +3,14 @@ package cn.zhuatech.bpm.config;
 
 import cn.zhuatech.bpm.model.*;import cn.zhuatech.bpm.repository.*;import org.springframework.boot.CommandLineRunner;import org.springframework.context.annotation.*;import org.springframework.security.crypto.password.PasswordEncoder;import java.math.BigDecimal;import java.time.LocalDate;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Configuration
 public class DataInitializer {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Bean CommandLineRunner seed(UserRepository users,ProcessDefinitionRepository accounts,ProcessInstanceRepository processInstances,ProcessTaskRepository processTasks,ApprovalTaskRepository expenses,SlaPolicyRepository slaPolicys,PasswordEncoder encoder){return args->{
         if(users.count()>0)return;
         users.save(new UserAccount("admin",encoder.encode("admin123"),"流程平台主管",UserAccount.Role.ADMIN));
