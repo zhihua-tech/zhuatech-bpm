@@ -1,5 +1,7 @@
 # ZhuaTech BPM · 业务流程管理社区源码版
 
+[简体中文](README.md) | [English](README.en.md)
+
 ## 企业级增强：流程版本发布治理
 
 新增模型、角色、职责分离、SLA、存量实例迁移、回滚和流程所有者审批门禁，详见 [流程发布治理](docs/ENTERPRISE_PROCESS_PUBLISH.md)。
