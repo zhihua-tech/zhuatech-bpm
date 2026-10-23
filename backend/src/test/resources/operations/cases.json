@@ -1,0 +1,48 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "REVIEW",
+      "reviewVisits": "#50",
+      "requiredReviewerMinutes": "#300",
+      "visitBacklog": "#0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "windowMinutes": "90"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "visitBacklog": "#5"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reworkVisits": "0"
+    },
+    "expected": {
+      "decision": "PASS"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "reviewers": "0"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "visitBacklog": "#50"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "minutesPerVisit": "0"
+    },
+    "expected": {},
+    "error": true
+  }
+]

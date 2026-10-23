@@ -1,0 +1,88 @@
+{
+  "slug": "bpm",
+  "title": "退回重审工作量与审批队列容量",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "newCases",
+      "label": "新增待审件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "reworkVisits",
+      "label": "退回后额外待审次数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "minutesPerVisit",
+      "label": "每次审批分钟",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "1440"
+    },
+    {
+      "key": "reviewers",
+      "label": "可用审批人数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10000"
+    },
+    {
+      "key": "windowMinutes",
+      "label": "每人可用分钟",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "10080"
+    }
+  ],
+  "columns": [
+    {
+      "key": "reviewVisits",
+      "label": "总待审次数"
+    },
+    {
+      "key": "requiredReviewerMinutes",
+      "label": "需要人员分钟"
+    },
+    {
+      "key": "availableReviewerMinutes",
+      "label": "可用人员分钟"
+    },
+    {
+      "key": "visitBacklog",
+      "label": "窗口外积压次数"
+    }
+  ],
+  "description": "将新流程件数和退回重审次数独立输入，计算总审核工作量、可承接次数和窗口外积压，不执行流程路由。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "newCases": "40",
+        "reworkVisits": "10",
+        "minutesPerVisit": "6",
+        "reviewers": "3",
+        "windowMinutes": "120"
+      }
+    ]
+  }
+}
