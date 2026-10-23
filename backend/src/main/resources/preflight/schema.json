@@ -1,0 +1,86 @@
+{
+  "slug": "bpm",
+  "title": "审批任务分离与截止日期预检",
+  "fields": [
+    {
+      "key": "task_no",
+      "label": "任务编号",
+      "type": "ID",
+      "length": 200
+    },
+    {
+      "key": "applicant",
+      "label": "申请人",
+      "type": "ID",
+      "length": 200
+    },
+    {
+      "key": "approver",
+      "label": "审批人",
+      "type": "ID",
+      "length": 200
+    },
+    {
+      "key": "created_date",
+      "label": "创建日期",
+      "type": "DATE",
+      "length": 200
+    },
+    {
+      "key": "due_date",
+      "label": "截止日期",
+      "type": "DATE",
+      "length": 200
+    },
+    {
+      "key": "priority",
+      "label": "优先级",
+      "type": "ENUM",
+      "length": 200,
+      "options": [
+        "LOW",
+        "NORMAL",
+        "HIGH"
+      ]
+    }
+  ],
+  "unique": [
+    [
+      "task_no"
+    ]
+  ],
+  "rules": [
+    {
+      "op": "DIFFERENT",
+      "args": [
+        "applicant",
+        "approver"
+      ],
+      "code": "SELF_APPROVAL",
+      "message": "申请人与审批人须不同",
+      "bad": {
+        "approver": "USER-01"
+      }
+    },
+    {
+      "op": "DATE_LE",
+      "args": [
+        "created_date",
+        "due_date"
+      ],
+      "code": "TASK_DATE",
+      "message": "截止日期不得早于创建日期",
+      "bad": {
+        "due_date": "2026-10-22"
+      }
+    }
+  ],
+  "sampleCsv": "task_no,applicant,approver,created_date,due_date,priority\nTASK-001,USER-01,USER-02,2026-10-23,2026-11-01,NORMAL\n",
+  "limits": {
+    "rows": 500,
+    "bytes": 262144,
+    "columns": 32,
+    "cellCharacters": 4000
+  },
+  "scope": "Read-only batch validation; no persistence, reference-master lookup or full production certification."
+}
